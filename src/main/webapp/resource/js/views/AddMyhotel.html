@@ -1,0 +1,69 @@
+<html>
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Add my Hotel!
+  </h1>
+  <h2>{{message}}</h2>
+  <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="center-block">Hotel Name:
+            <input class="form-control" formControlName="name">
+          </label>
+          <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched) "  class="alert alert-danger">
+            <div *ngIf="angForm.controls['name'].errors.required">
+            Name is required.
+          </div>
+          </div>
+          <br><br>
+           <label class="center-block">Address:
+            <input class="form-control" formControlName="address">
+          </label>
+          <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched) "  class="alert alert-danger">
+          <div *ngIf="angForm.controls['address'].errors.required">
+            Address is required.
+          </div>
+        </div>
+        <br><br>
+         <label class="center-block">Menu:
+            <input class="form-control" formControlName="menu">
+          </label>
+          <div *ngIf="angForm.controls['menu'].invalid && (angForm.controls['menu'].dirty || angForm.controls['menu'].touched) "  class="alert alert-danger">
+            <div *ngIf="angForm.controls['menu'].errors.required">
+            Menu is required.
+          </div>
+          </div>
+          <br><br>
+          <label class="center-block">Contact:
+            <input class="form-control" formControlName="contact" contact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         >
+          </label>
+          <div *ngIf="angForm.controls['contact'].invalid && (angForm.controls['contact'].dirty || angForm.controls['menu'].touched) "  class="alert alert-danger">
+            <div *ngIf="angForm.controls['contact'].errors.required">
+            Contact is required.
+          </div>
+          </div>
+           <br><br>
+          <label class="center-block">Email:
+            <input class="form-control" formControlName="email"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          >
+          </label>
+          <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched) "  class="alert alert-danger">
+            <div *ngIf="angForm.controls['email'].errors.email">
+            Email is invalid.
+          </div>
+          </div>
+          
+        </div>
+        <br><br>
+        <button type="submit"
+            [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+            Save
+        </button>  <button class="btn btn-primary btn-large center"  type="reset" 
+        ng-click="reset()">Clear
+</button>
+           
+       
+  </form>
+<p>Form value: {{ angForm.value | json }}</p>
+<p>Form status: {{ angForm.status | json }}</p>
+</div>
+</html>
